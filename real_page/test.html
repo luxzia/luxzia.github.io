@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <!--script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script-->
+    <!--script src="../../../dist/aframe-master.min.js"></script>
+    <script src="js/components/aframe-tooltip-component.js"></script>
+    <script src="js/components/camera-position.js"></script>
+    <script src="js/components/link-controls.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script src="../../js/info-message.js"></script-->
+</head>
+<body>
+    <a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position environment info-message="htmlSrc: #messageText"> 
+        <a-assets>
+            <img id="aurora" src="img/retouched.jpg">
+	   </a-assets>
+        
+        <a-sky src="#sky" color="#000000" rotation="0 -145 0"></a-sky>
+        <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
+
+        <a-link href="main_menu.html"  title="Enter Sealladh" position="0 1.5 -1.8" image="#aurora"></a-link>
+        
+        
+        <!--a-entity id="quotation" 
+                  position="0 1.5 -1.5"
+                  geometry="primitive: plane; width: 3; height: auto"
+                  material="color: #444444; transparent: true; opacity: 0.80;"
+                  text="value: We have to find a new art and a new psychology to penetrate the apathy and denial that are preventing us making the changes that are inevitable if our world is to survive  -- Ben Okri; anchor: center; baseline: center; wrapCount: 20; transparent: true; opacity: 0.90; color: #FFFFFF">
+        </a-entity-->
+    </a-scene>
+    </body>
+</html>

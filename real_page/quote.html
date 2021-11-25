@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script>
+    AFRAME.registerComponent('navigate-on-click', {
+        schema: {
+            url: {default: ''}
+        },
+        
+        init: function () {
+            var data = this.data;
+            var el = this.el;
+            
+            el.addEventListener('click', function () {
+                window.location.href = data.url;
+            });
+        }
+    });
+    </script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <a-mixin id="marker" geometry="primitive: plane; width: 0.057; height: 0.057" material="color: #C03546"></a-mixin>
+        </a-assets>
+        <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
+        <a-sky src="#sky" color="#000000" rotation="0 -145 0"></a-sky>
+        <a-entity id="quotation" 
+                  position="0 1.5 -2"
+                  geometry="primitive: plane; width: 3; height: auto"
+                  material="color: #000000; transparent: true; opacity: 0.80;"
+                  text="value: We have to find a new art and a new psychology to penetrate the apathy and denial that are preventing us making the changes that are inevitable if our world is to survive. \n\n --Ben Okri, poet and novelist; anchor: center; baseline: center; wrapCount: 20; transparent: true; opacity: 0.90; color: #FFFFFF;">
+        </a-entity>
+        
+        <a-text data-brackets-id="2519" value="" geometry="primitive:plane;segmentsWidth:20" text="value:Press to Continue" position="1.11248 -0.27832 -2.0" rotation="-40 0 0" navigate-on-click="url:test.html">
+            
+        </a-text>
+        
+        <!--a-text value="Now Interactable" geometry="primitive:plane">
+            
+        </a-text>
+    
+        <a-box data-brackets-id="2373" color="#4CC3D9" position="1.11248 -0.27832 -2.0"
+                 rotation="40 0 0" shadow="" event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9" navigate-on-click="url:2_sealladh_main_menu.html" material="color:#3a3b3c" geometry="" scale="1 0.01 0.3" text="value: Click to enter; color: white;">
+        </a-box-->
+    
+        
+    </a-scene>
+</body>
+</html>

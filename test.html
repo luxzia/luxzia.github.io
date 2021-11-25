@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Oculus Go Home Environment :: Lo-Fi-Plus Prototype showing Notifications</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-animation/-component@5.1.2/dist/aframe-animation-component.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <a-sky src="#sky" color="#000000" rotation="0 -145 0"></a-sky>
+            <a-entity geometry="primitive: box" material="color: orange; transparent: true"
+                      position="0 1.7.0"
+              animation__fadeout="property: components.material.material.opacity; dur: 5000; easing: linear; from: 1; to: 0; startEvents: fadeout">
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
+    
