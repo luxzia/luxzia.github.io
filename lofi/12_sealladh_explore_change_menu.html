@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sealladh Explore Change Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+     <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script>
+        AFRAME.registerComponent('navigate-on-click', {
+            schema: {
+                url: {default: ''}
+            },
+            
+            init: function () {
+                var data = this.data;
+                var el = this.el;
+                
+                el.addEventListener('click', function () {
+                    window.location.href = data.url;
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <!-- ***** SKY ***** -->
+            <!--Detailed CC BY 2.0 Atrribution information for the "sky" image "27416636695_d4096b1c20_o.jpg"
+            Author/Photographer: Kereplaz
+            Copyright: Some Rights Reserved
+            Title: pusiasalio lauks (1)
+            URI: https://www.flickr.com/photos/kereplaz/27416636695/in/photolist-HGf4Ko-JvByoP-JCq82F-Jzpke7-JvzX3R-JtqaV7-HH1LSm-HNVPQm-HLHCMD-HS4qXf-G1uYtQ-HC4Dbf-HGdkYE-JvxuoH-JCpptF-JCotcV-JvyCN6-JvyMAM-JtoHd1-HGbMkz-HGaDz6-KwtLkg-KtZmxq-KtZiMf-JfgCj5-JoC29E-NRxAoR-H8VLhL-MBAakq-M76TRJ-M76U6w-N1HWdf-HKH6JJ-HmBxxm-HM1fPg-GHp3PQ-GF6xk4-GR5CgP-HmmkZm-H21pkf-GR5AGX-GR5Bp8-HLHqUF-HHJBcS-H6kiP7-H6jEt5-JKkhi5-HS4roL-FFiCzg-HLHus2
+            Modifications: none
+            License: https://creativecommons.org/licenses/by/2.0/legalcode     -->
+            <img id="sky" src="img/bryan-goff-IuyhXAia8EA-unsplash.jpg">
+            <!--<img id="sky" src="img/27416636695_d4096b1c20_o.jpg">-->
+            <!-- <img id="sky" src="img/vr-prototyping-template_3600x1800.png"> -->
+            <!-- <img id="sky" src="img/OculusGo-HomeEnv-Notifications-lofi.png"> -->
+            <!-- ***** NOTIFICATIONS CONTENT ***** -->
+            <img id="portal" src="SEALLADH_ENTRY_SCREEN 13.1 Mpx 2021-11-21 17_24_08.jpg">
+            <img id="explore_main_menu" src="SEALLADH_EXPLORE_FULL_MENU 13.1 Mpx 2021-11-21 17_35_57.jpg">
+            <img id="time_explaination" src="SEALLADH_EXPLORE_TIME_EXPLANATION.jpg">
+            <img id="time_slider" src="SEALLADH_EXPLORE_TIME_SLIDER.jpg">
+            <img id="change_information" src="SEALLADH_EXPLORE_CHANGE_INFORMATION 13.1 Mpx 2021-11-21 17_43_36.jpg">
+            <img id="change_menu" src="SEALLADH_EXPLORE_CHANGE_MENU.jpg">
+            <img id="notifications-content" src="img/OculusGo-Content-Notifications-All.png">
+            <img id="quotation" src="img/Statement.png">
+            <!-- ***** UNIVERSAL MENU ***** -->
+            <img id="universal-menu" src="img/OculusGo-UniversalMenu-Notifications-ViewAll.png">
+    		<audio id="wind" src="img/wind.mp3"></audio>    
+	</a-assets>
+        <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
+		<a-entity sound="src: #wind"></a-entity>
+        <!-- ***** SKY ***** -->
+        <a-sky src="#change_menu" rotation="0 -145 0"></a-sky>
+        <a-sphere radius="0.5" position="9 -6 -0.5" rotation="0 45 0" color="#4CC3D9" shadow
+             event-set__enter="_event: mouseenter; color: #026fc9"
+             event-set__leave="_event: mouseleave; color: #4CC3D9"
+             navigate-on-click="url: 13_sealladh_explore_non_human_menu.html">
+        </a-sphere><!-- back -->
+        <a-sphere radius="0.5" position="12 -12 -8" rotation="0 45 0" color="#4CC3D9" shadow
+             event-set__enter="_event: mouseenter; color: #026fc9"
+             event-set__leave="_event: mouseleave; color: #4CC3D9"
+             navigate-on-click="url: 2_sealladh_main_menu.html">
+        </a-sphere><!-- main -->
+        <a-sphere radius="0.5" position="6 -5.5 -8" rotation="0 45 0" color="#4CC3D9" shadow
+             event-set__enter="_event: mouseenter; color: #026fc9"
+             event-set__leave="_event: mouseleave; color: #4CC3D9"
+             navigate-on-click="url: index.html">
+        </a-sphere><!-- quit -->
+        <!--<a-sky src="#sky" rotation="0 -90 0"></a-sky>--> <!--for the other 2 posible "sky" options-->
+        <!-- ***** NOTIFICATIONS CONTENT ***** -->
+		
+      	<!--a-text value="Notifications" text="anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 5.2; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json" position="0 4.0 -9"></a-text-->
+        <!--<a-text value="Notifications" text="anchor:center; color:#000000; opacity:0.75; align:center; baseline:bottom; width: 5.2" position="0 4.10 -9"></a-text>-->
+        <!--a-entity id="quotation">
+            <a-curvedimage radius="9" src="#quotation" material="side:back" geometry="height:4.5; openEnded:true; thetaLength:61; thetaStart:149.5" position="0 1.7 0">
+                <a-animation attribute="material.opacity" dur="3000" direction="alternate" to="0" repeat="0"></a-animation>
+            </a-curvedimage>
+        </a-entity-->
+        <!-- ***** UNIVERSAL MENU ***** -->
+        <!--a-image src="#universal-menu" geometry="height:0.65; width:3.25" position="0 -0.2 -2.5" rotation="-33.75 0 0"></a-image-->
+    </a-scene>
+</body>
+<script>
+	var entity=document.querySelector('[sound]');
+	entity.components.sound.playSound();
+</script>
+</html>

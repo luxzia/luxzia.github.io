@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sealladh Non Human Menu</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script>
+        AFRAME.registerComponent('navigate-on-click', {
+            schema: {
+                url: {default: ''}
+            },
+            
+            init: function () {
+                var data = this.data;
+                var el = this.el;
+                
+                el.addEventListener('click', function () {
+                    window.location.href = data.url;
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <!-- Asset Management System -->
+        <a-assets>
+            
+            <img id="L09-img-01" src="L09-IMGs/L09-img-1024x768-flat.jpg">
+            <img id="L09-img-02" src="L09-IMGs/L09-img-1024x768-curved.jpg">
+            <img id="L09-img-03" src="L09-IMGs/L09-img-1024x768-curved-layout-R.jpg">
+            <img id="L09-img-04" src="L09-IMGs/L09-img-1024x768-curved-layout-C.jpg">
+            <img id="L09-img-05" src="L09-IMGs/L09-img-1024x768-curved-layout-L.jpg">
+            <img id="beaver" src="beaver_right.png">
+            <img id="frog" src="frog_right.png">
+            <img id="stone_wall" src="stone_wall_wales.jpg">
+            <img id="sky" src="SEALLADH_EXPLORE_NON_HUMAN_MENU.jpg">
+        </a-assets>
+        
+        <!-- Image Primitive | IMG size 1024x768px -->
+        <!-- IMG width (px) = 1 m -->
+        <!-- ? IMG height (m) = width (m)/IMG width (px) * IMG height (px) -->
+   
+        
+        <!-- Curved Image Primitive | SINGLE IMG | IMG size 1024x768 px -->
+        <!-- ? Radius of Arc -->
+        <!-- Width of Arc = 1 m -->
+        <!-- Length of Arc = 1.111 m -->
+        <!-- Angle Subtended by Arc = 90 deg -->
+        <!-- ? IMG height (m) = width (m)/IMG width (px) * IMG height (px) -->
+        <!--a-curvedimage src="#L09-img-02"
+                       theta-length="90"
+                       theta-start="135"
+                       radius="0.707"
+                       height="0.833"
+                       position="0 1.5 0"
+                       scale="3 3 3">
+        </a-curvedimage-->
+        
+        <!-- Curved Image Primitive | 3-IMG LAYOUT | IMG size 1024x768 px -->
+        <!-- ? Radius of Arc -->
+        <!-- Width of Arc = 1 m -->
+        <!-- Length of Each IMG 0.436 m -->
+        <!-- Angle Subtended by Arc = 180 deg -->
+        <!-- Angle Subtended by Each IMG = 50 deg -->
+        <!-- ? IMG height (m) = width (m)/IMG width (px) * IMG height (px) -->
+        <!-- RIGHT IMG -->
+        <a-sky src="#sky" rotation="0 -145 0"></a-sky>
+        <a-entity id="camera" camera="userHeight: 10" look-controls cursor="rayOrigin: mouse"></a-entity>
+        
+        <a-sphere radius="0.5" position="9 -2 -0.5" rotation="0 45 0" color="#4CC3D9" shadow
+             event-set__enter="_event: mouseenter; color: #026fc9"
+             event-set__leave="_event: mouseleave; color: #4CC3D9"
+             navigate-on-click="url: 3_sealladh_explore_main_menu">
+        </a-sphere><!-- back -->
+        <a-sphere radius="0.5" position="8 -2 -3" rotation="0 45 0" color="#4CC3D9" shadow
+             event-set__enter="_event: mouseenter; color: #026fc9"
+             event-set__leave="_event: mouseleave; color: #4CC3D9"
+             navigate-on-click="url: 2_sealladh_main_menu.html">
+        </a-sphere><!-- main -->
+        <a-sphere radius="0.5" position="6 -2 -8" rotation="0 45 0" color="#4CC3D9" shadow
+             event-set__enter="_event: mouseenter; color: #026fc9"
+             event-set__leave="_event: mouseleave; color: #4CC3D9"
+             navigate-on-click="url: 3_sealladh_explore_main_menu.html">
+        </a-sphere>
+        
+    </a-scene>
+</body>
+</html>
