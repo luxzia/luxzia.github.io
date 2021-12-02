@@ -1,81 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Sealladh Portal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+<html>
+  <body>
+    <!-- As if this Glitch were a typical HTML CodePen... -->    
+    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+    
+    <!-- Use components defined in separate files. -->
+    <!--script src="arrow-key-rotation.js"></script-->
     <script>
-        AFRAME.registerComponent('navigate-on-click', {
-            schema: {
-                url: {default: ''}
-            },
-            
-            init: function () {
-                var data = this.data;
-                var el = this.el;
-                
-                el.addEventListener('click', function () {
-                    window.location.href = data.url;
-                });
+        AFRAME.registerComponent('arrow-key-rotation', {
+          schema: {
+            enabled: {default: true},
+            dx: {default: 2.0},
+            dy: {default: 2.0},
+          },
+          init: function () {
+            this.onKeyDown = this.onKeyDown.bind(this);
+            this.onKeyUp = this.onKeyUp.bind(this);
+            this.directionX = 0;
+            this.directionY = 0;
+          },
+          play: function () {
+            window.addEventListener('keydown', this.onKeyDown);
+            window.addEventListener('keyup', this.onKeyUp);
+          },
+          pause: function () {
+            window.removeEventListener('keydown', this.onKeyDown);
+            window.removeEventListener('keyup', this.onKeyUp);          
+          },
+          onKeyDown: function (evt) {
+            switch (evt.keyCode) {
+              case 37: this.directionX = 1; break;
+              case 38: this.directionY = 1; break;
+              case 39: this.directionX = -1; break;
+              case 40: this.directionY = -1; break;
             }
+          },
+          onKeyUp: function (evt) {
+            switch (evt.keyCode) {
+              case 37: this.directionX = 0; break;
+              case 38: this.directionY = 0; break;
+              case 39: this.directionX = 0; break;
+              case 40: this.directionY = 0; break;
+            }          
+          },
+          tick: function (t, dt) {
+            if (!this.data.enabled) { return; }
+            var rotation = this.el.getAttribute('rotation');
+            if (!rotation) { return; }
+            if (this.directionX || this.directionY) {
+              rotation.x += this.data.dx * this.directionY;
+              rotation.y += this.data.dy * this.directionX;
+              this.el.setAttribute('rotation', rotation);
+            }
+          }
         });
     </script>
-</head>
-<body>
+    <!--script src="play-on-window-click.js"></script-->
+    <script>
+        AFRAME.registerComponent('play-on-window-click', {
+          init: function () {
+            this.onClick = this.onClick.bind(this);
+          },
+          play: function () {
+            window.addEventListener('click', this.onClick);
+          },
+          pause: function () {
+            window.removeEventListener('click', this.onClick);
+          },
+          onClick: function (evt) {
+            var video = this.el.components.material.material.map.image;
+            if (!video) { return; }
+            video.play();
+          }
+        });
+    </script>
+    <!--script src="play-on-vrdisplayactivate-or-enter-vr.js"></script-->
+    <script>
+        AFRAME.registerComponent('play-on-vrdisplayactivate-or-enter-vr', {
+          init: function () {
+            this.playVideo = this.playVideo.bind(this);
+            this.playVideoNextTick = this.playVideoNextTick.bind(this);
+          },
+          play: function () {
+            window.addEventListener('vrdisplayactivate', this.playVideo);
+            this.el.sceneEl.addEventListener('enter-vr', this.playVideoNextTick);
+          },
+          pause: function () {
+            this.el.sceneEl.removeEventListener('enter-vr', this.playVideoNextTick);
+            window.removeEventListener('vrdisplayactivate', this.playVideo);
+          },
+          playVideoNextTick: function () {
+            setTimeout(this.playVideo);
+          },
+          playVideo: function () {
+            var video = this.el.components.material.material.map.image;
+            if (!video) { return; }
+            video.play();
+          }
+        });
+    </script>
+    <!--script src="hide-once-playing.js"></script-->
+    <script>
+        AFRAME.registerComponent('hide-once-playing', {
+          schema: {type: 'selector'},
+          init: function () {
+            this.onPlaying = this.onPlaying.bind(this);
+            this.onPause = this.onPause.bind(this);
+          },
+          play: function () {
+            if (this.data) {
+              this.data.addEventListener('playing', this.onPlaying);
+              this.data.addEventListener('pause', this.onPause);
+            }
+          },
+          pause: function () {
+            if (this.data) {
+              this.data.removeEventListener('playing', this.onPlaying);
+              this.data.removeEventListener('pause', this.onPause);
+            }
+          },
+          onPlaying: function (evt) {
+            this.el.setAttribute('visible', false);
+          },
+          onPause: function (evt) {
+            this.el.setAttribute('visible', true);
+          }
+        });
+    </script>
+    <script>
+        AFRAME.registerComponent('toggle-play-on-window-click', {
+          init: function () {
+            this.onClick = this.onClick.bind(this);
+          },
+          play: function () {
+            window.addEventListener('click', this.onClick);
+          },
+          pause: function () {
+            window.removeEventListener('click', this.onClick);
+          },
+          onClick: function (evt) {
+            var video = this.el.components.material.material.map.image;
+            if (!video) { return; }
+            video.paused ? video.play() : video.pause();
+          }
+        });
+    </script>
+    <!-- Specify our scene. -->
     <a-scene>
-        <a-assets>
-            <!-- ***** SKY ***** -->
-            <!--Detailed CC BY 2.0 Atrribution information for the "sky" image "27416636695_d4096b1c20_o.jpg"
-            Author/Photographer: Kereplaz
-            Copyright: Some Rights Reserved
-            Title: pusiasalio lauks (1)
-            URI: https://www.flickr.com/photos/kereplaz/27416636695/in/photolist-HGf4Ko-JvByoP-JCq82F-Jzpke7-JvzX3R-JtqaV7-HH1LSm-HNVPQm-HLHCMD-HS4qXf-G1uYtQ-HC4Dbf-HGdkYE-JvxuoH-JCpptF-JCotcV-JvyCN6-JvyMAM-JtoHd1-HGbMkz-HGaDz6-KwtLkg-KtZmxq-KtZiMf-JfgCj5-JoC29E-NRxAoR-H8VLhL-MBAakq-M76TRJ-M76U6w-N1HWdf-HKH6JJ-HmBxxm-HM1fPg-GHp3PQ-GF6xk4-GR5CgP-HmmkZm-H21pkf-GR5AGX-GR5Bp8-HLHqUF-HHJBcS-H6kiP7-H6jEt5-JKkhi5-HS4roL-FFiCzg-HLHus2
-            Modifications: none
-            License: https://creativecommons.org/licenses/by/2.0/legalcode     -->
-            <img id="sky" src="img/bryan-goff-IuyhXAia8EA-unsplash.jpg">
-            <!--<img id="sky" src="img/27416636695_d4096b1c20_o.jpg">-->
-            <!-- <img id="sky" src="img/vr-prototyping-template_3600x1800.png"> -->
-            <!-- <img id="sky" src="img/OculusGo-HomeEnv-Notifications-lofi.png"> -->
-            <!-- ***** NOTIFICATIONS CONTENT ***** -->
-            <img id="portal" src="SEALLADH_ENTRY_SCREEN 13.1 Mpx 2021-11-21 17_24_08.jpg">
-            <img id="notifications-content" src="img/OculusGo-Content-Notifications-All.png">
-            <img id="quotation" src="img/Statement.png">
-            <!-- ***** UNIVERSAL MENU ***** -->
-            <img id="universal-menu" src="img/OculusGo-UniversalMenu-Notifications-ViewAll.png">
-    		<audio id="wind" src="img/wind.mp3"></audio>    
-	</a-assets>
-        
-        
-		<a-entity sound="src: #wind"></a-entity>
-        <!-- ***** SKY ***** -->
-        <a-sky src="#portal"y rotation="0 -145 0"></a-sky>
-        <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
-
-        <a-text value="Click here to go to next screen" text="anchor:center; color#ffffff align: center; baseline: bottom; width: 5.2; shader; msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json" position="13 -3 0.5" rotation="0 45 0"></a-text>
-        <a-sphere radius="0.5" position="2 -2 0" rotation="0 45 0" color="#4CC3D9" shadow
-             event-set__enter="_event: mouseenter; color: #026fc9"
-             event-set__leave="_event: mouseleave; color: #4CC3D9"
-             navigate-on-click="url: 2_sealladh_main_menu.html">
-        </a-sphere>
-        
-        <!--<a-sky src="#sky" rotation="0 -90 0"></a-sky>--> <!--for the other 2 posible "sky" options-->
-        <!-- ***** NOTIFICATIONS CONTENT ***** -->
-		
-      	<!--a-text value="Notifications" text="anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 5.2; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json" position="0 4.0 -9"></a-text-->
-        <!--<a-text value="Notifications" text="anchor:center; color:#000000; opacity:0.75; align:center; baseline:bottom; width: 5.2" position="0 4.10 -9"></a-text>-->
-        <!--a-entity id="quotation">
-            <a-curvedimage radius="9" src="#quotation" material="side:back" geometry="height:4.5; openEnded:true; thetaLength:61; thetaStart:149.5" position="0 1.7 0">
-                <a-animation attribute="material.opacity" dur="3000" direction="alternate" to="0" repeat="0"></a-animation>
-            </a-curvedimage>
-        </a-entity-->
-        <!-- ***** UNIVERSAL MENU ***** -->
-        <!--a-image src="#universal-menu" geometry="height:0.65; width:3.25" position="0 -0.2 -2.5" rotation="-33.75 0 0"></a-image-->
+      <!-- The original example also has this 180 degree rotation, to appear to be going forward. -->
+      <a-videosphere rotation="0 180 0" src="#video"
+                     material="side:back"
+                     play-on-window-click
+                     play-on-vrdisplayactivate-or-enter-vr>
+      </a-videosphere>
+      
+      <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
+      <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
+        <!-- Text element for display messaging.  Hide once video is playing. -->
+        <a-entity id="msg" position="0 -0.3 -1.5" text="align:center; 
+                width:3;
+                wrapCount:100;
+                color:red;
+                value:Click window to make the video play, if needed."
+                hide-once-playing="#video">
+        </a-entity>
+      </a-camera>      
+      
+      <!-- Wait for the video to load. -->
+      <a-assets>
+        <!-- Single source video. -->
+        <video id="video" style="display:none" 
+               autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. -->
+          <source type="video/mp4"
+               src="https://ghcdn.rawgit.org/luxzia/luxzia.github.io/master/dandelion_good.mp4" />
+        </video>
+      </a-assets>
     </a-scene>
-</body>
-<script>
-	var entity=document.querySelector('[sound]');
-	entity.components.sound.playSound();
-</script>
+    
+    <!-- Show a button to switch to the multi-source example that shows detail. -->
+    <button onClick="window.location.href='multi-source-detail.html'" style="position:absolute;top:10px;right:10px;">
+      Switch to multi-source detail example
+    </button>
+  </body>
 </html>

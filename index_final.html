@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- As if this Glitch were a typical HTML CodePen... -->    
+    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+    
+    <!-- Use components defined in separate files. -->
+    <!--script src="arrow-key-rotation.js"></script-->
+    <script>
+        AFRAME.registerComponent('arrow-key-rotation', {
+          schema: {
+            enabled: {default: true},
+            dx: {default: 2.0},
+            dy: {default: 2.0},
+          },
+          init: function () {
+            this.onKeyDown = this.onKeyDown.bind(this);
+            this.onKeyUp = this.onKeyUp.bind(this);
+            this.directionX = 0;
+            this.directionY = 0;
+          },
+          play: function () {
+            window.addEventListener('keydown', this.onKeyDown);
+            window.addEventListener('keyup', this.onKeyUp);
+          },
+          pause: function () {
+            window.removeEventListener('keydown', this.onKeyDown);
+            window.removeEventListener('keyup', this.onKeyUp);          
+          },
+          onKeyDown: function (evt) {
+            switch (evt.keyCode) {
+              case 37: this.directionX = 1; break;
+              case 38: this.directionY = 1; break;
+              case 39: this.directionX = -1; break;
+              case 40: this.directionY = -1; break;
+            }
+          },
+          onKeyUp: function (evt) {
+            switch (evt.keyCode) {
+              case 37: this.directionX = 0; break;
+              case 38: this.directionY = 0; break;
+              case 39: this.directionX = 0; break;
+              case 40: this.directionY = 0; break;
+            }          
+          },
+          tick: function (t, dt) {
+            if (!this.data.enabled) { return; }
+            var rotation = this.el.getAttribute('rotation');
+            if (!rotation) { return; }
+            if (this.directionX || this.directionY) {
+              rotation.x += this.data.dx * this.directionY;
+              rotation.y += this.data.dy * this.directionX;
+              this.el.setAttribute('rotation', rotation);
+            }
+          }
+        });
+    </script>
+    <!--script src="play-on-window-click.js"></script-->
+    <script>
+        AFRAME.registerComponent('play-on-window-click', {
+          init: function () {
+            this.onClick = this.onClick.bind(this);
+          },
+          play: function () {
+            window.addEventListener('click', this.onClick);
+          },
+          pause: function () {
+            window.removeEventListener('click', this.onClick);
+          },
+          onClick: function (evt) {
+            var video = this.el.components.material.material.map.image;
+            if (!video) { return; }
+            video.play();
+          }
+        });
+    </script>
+    <!--script src="play-on-vrdisplayactivate-or-enter-vr.js"></script-->
+    <script>
+        AFRAME.registerComponent('play-on-vrdisplayactivate-or-enter-vr', {
+          init: function () {
+            this.playVideo = this.playVideo.bind(this);
+            this.playVideoNextTick = this.playVideoNextTick.bind(this);
+          },
+          play: function () {
+            window.addEventListener('vrdisplayactivate', this.playVideo);
+            this.el.sceneEl.addEventListener('enter-vr', this.playVideoNextTick);
+          },
+          pause: function () {
+            this.el.sceneEl.removeEventListener('enter-vr', this.playVideoNextTick);
+            window.removeEventListener('vrdisplayactivate', this.playVideo);
+          },
+          playVideoNextTick: function () {
+            setTimeout(this.playVideo);
+          },
+          playVideo: function () {
+            var video = this.el.components.material.material.map.image;
+            if (!video) { return; }
+            video.play();
+          }
+        });
+    </script>
+    <!--script src="hide-once-playing.js"></script-->
+    <script>
+        AFRAME.registerComponent('hide-once-playing', {
+          schema: {type: 'selector'},
+          init: function () {
+            this.onPlaying = this.onPlaying.bind(this);
+            this.onPause = this.onPause.bind(this);
+          },
+          play: function () {
+            if (this.data) {
+              this.data.addEventListener('playing', this.onPlaying);
+              this.data.addEventListener('pause', this.onPause);
+            }
+          },
+          pause: function () {
+            if (this.data) {
+              this.data.removeEventListener('playing', this.onPlaying);
+              this.data.removeEventListener('pause', this.onPause);
+            }
+          },
+          onPlaying: function (evt) {
+            this.el.setAttribute('visible', false);
+          },
+          onPause: function (evt) {
+            this.el.setAttribute('visible', true);
+          }
+        });
+    </script>
+    <script>
+        AFRAME.registerComponent('toggle-play-on-window-click', {
+          init: function () {
+            this.onClick = this.onClick.bind(this);
+          },
+          play: function () {
+            window.addEventListener('click', this.onClick);
+          },
+          pause: function () {
+            window.removeEventListener('click', this.onClick);
+          },
+          onClick: function (evt) {
+            var video = this.el.components.material.material.map.image;
+            if (!video) { return; }
+            video.paused ? video.play() : video.pause();
+          }
+        });
+    </script>
+    <!-- Specify our scene. -->
+    <a-scene>
+      <!-- The original example also has this 180 degree rotation, to appear to be going forward. -->
+      <a-videosphere rotation="0 180 0" src="#video"
+                     material="side:back"
+                     play-on-window-click
+                     play-on-vrdisplayactivate-or-enter-vr>
+      </a-videosphere>
+      
+      <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
+      <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
+        <!-- Text element for display messaging.  Hide once video is playing. -->
+        <a-entity id="msg" position="0 -0.3 -1.5" text="align:center; 
+                width:3;
+                wrapCount:100;
+                color:red;
+                value:Click window to make the video play, if needed."
+                hide-once-playing="#video">
+        </a-entity>
+      </a-camera>      
+      
+      <!-- Wait for the video to load. -->
+      <a-assets>
+        <!-- Single source video. -->
+        <video id="video" style="display:none" 
+               autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. -->
+          <source type="video/mp4"
+               src="https://ghcdn.rawgit.org/luxzia/luxzia.github.io/master/dandelion_good.mp4" />
+        </video>
+      </a-assets>
+    </a-scene>
+    
+    <!-- Show a button to switch to the multi-source example that shows detail. -->
+    <button onClick="window.location.href='multi-source-detail.html'" style="position:absolute;top:10px;right:10px;">
+      Switch to multi-source detail example
+    </button>
+  </body>
+</html>
