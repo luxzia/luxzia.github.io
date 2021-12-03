@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <title>Reimagine Home</title>
+    <title>Reimagine Main Menu</title>
 </head>
 <html>
   <body>
@@ -15,6 +15,22 @@
     <script src="aframe_gui/examples/js/gui-env.js"></script>  
     <!-- Use components defined in separate files. -->
     <!--script src="arrow-key-rotation.js"></script-->
+    <script>
+        AFRAME.registerComponent('navigate-on-click', {
+            schema: {
+                url: {default: ''}
+            },
+
+            init: function () {
+                var data = this.data;
+                var el = this.el;
+
+                el.addEventListener('click', function () {
+                    window.location.href = data.url;
+                });
+            }
+        });
+    </script>
     <script>
         AFRAME.registerComponent('arrow-key-rotation', {
           schema: {
@@ -182,43 +198,58 @@
         </a-entity>
       </a-camera>      
       
-    <a-entity id="quotation"
-                  position="0 1.6 -2"
-                  geometry="primitive: plane; width: 3; height: auto"
-                  material="color: #000000; transparent: true; opacity: 0.80; side: double"
-                  text="value: We have to find a new art and a new psychology to penetrate the apathy and denial that are preventing us making the changes that are inevitable if our world is to survive. \n\n --Ben Okri, poet and novelist; anchor: center; baseline: center; wrapCount: 30; transparent: true; opacity: 0.90; color: #FFFFFF;">
-    </a-entity>
+    
     <a-text value="(re)imagine" text="anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 7; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Light.json" position="0 2.302 -2"></a-text>
-    <a-text value="Continue" text="anchor:center; color:#000000; align:center; baseline:bottom; width: 6; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Light.json" position="0 0.25 -2" rotation="-10 0 0"></a-text>
+    <a-text value="Quit" text="anchor:center; color:#000000; align:center; baseline:bottom; width: 5; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Light.json" position="0 0.22 -1.75" rotation="-10 0 0"></a-text>
     <a-assets>
         <a-asset-item id="iconfontsolid" src="aframe_gui/examples/assets/fonts/fa-solid-900.ttf"></a-asset-item>
         <a-asset-item id="iconfontbrand" src="aframe_gui/examples/assets/fonts/fa-brands-400.ttf"></a-asset-item>
         <a-asset-item id="textfont" src="aframe_gui/examples/assets/fonts/DiplomataSC-Regular.ttf"></a-asset-item>
+        <img id="beaver" src="beaver_for_menu_2.jpg">
+        <img id="stories" src="stories_for_menu_11_27.jpg">
         <a-asset-item id="theater-obj" src="aframe_gui/examples/assets/theater.obj"></a-asset-item>
       </a-assets>
+        <a-image src="#beaver"
+                 position="-0.824 1.5 -2.583"
+                 width="1"
+                 height="1.5"
+                 scale="1.5 1.5 0.45"
+                 navigate-on-click="url:river_maybe.html">
+        </a-image>
+        
+        <a-text data-brackets-id="2519" value="" text="value:experiences; anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 5; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/raleway/Raleway-Regular.json" position="-0.824 0.3 -2.583">
+        <!--a-text value="experiences" text="anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 5; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/lora/Lora-Regular.json" position="-0.824 0.3 -2.583" navigate-on-click="url: experiences_menu.html"--></a-text>
+           <a-image src="#stories"
+                 position="0.776 1.5 -2.583"
+                 width="1"
+                 height="1.5"
+                 scale="1.5 1.5 0.45"
+                 navigate-on-click="url: test_menu.html">
+            </a-image>
+        
+        <a-text value="stories" text="anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 5; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/raleway/Raleway-Regular.json" position="0.776 0.3 -2.583" navigate-on-click="url: beaver_land.html"></a-text>
     <a-gui-flex-container
-            id="test_click" flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
-            opacity="0.7" width="4.5" height="1"
-            position="0 0.3 -2.5" rotation="-10 0 0" scale="0.5 0.5 0.5"
-        >
-            <a-gui-button
-                id="go_to_portal"
-                value="Continue"
-                onclick="goToPortal()"
-                width="3" height="0.75"
-                font-color="#000000"
-                font-size="0.5"
-                font="aframe_gui/examples/assets/fonts/fa-solid-900.ttf"
+			id="test_click" flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="2.25" height="0.75"
+			position="0 0.35 -2" rotation="-10 0 0" scale="0.5 0.5 0.5"
+		>
+			<a-gui-button
+                id="quit"
+                value="Quit"
+                onclick="goToHome()"
+				width="1.5" height="0.5"
+				font-size="0.3"
+				font="aframe_gui/examples/assets/fonts/fa-solid-900.ttf"
                 ></a-gui-button>
-            <!--a-gui-toggle
-                width="2.75" height="0.75"
-                onclick="toggleCaps"
-                value="Captions"
-                font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
-            >
-            </a-gui-toggle-->
-    </a-gui-flex-container>
-
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="aframe_gui/examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		</a-gui-flex-container>
+    
       <!-- Wait for the video to load. -->
       <a-assets>
         <!-- Single source video. -->
@@ -229,6 +260,7 @@
                src="https://ghcdn.rawgit.org/luxzia/luxzia.github.io/master/dandelion_good.mp4" />
         </video>
         <a-mixin id="marker" geometry="primitive: plane; width: 0.057; height: 0.057" material="color: #C03546"></a-mixin>
+        <a-asset img="press_to_continue_image" src="press_to_continue.jpg"></a-asset>
         <canvas id="canvasObj" crossorigin="anonymous" webkit-playsinline=""></canvas>
         <a-asset-item id="iconfontsolid" src="aframe_gui/examples/assets/fonts/fa-solid-900.ttf"></a-asset-item>
         <a-asset-item id="iconfontbrand" src="aframe_gui/examples/assets/fonts/fa-brands-400.ttf"></a-asset-item>
@@ -237,13 +269,14 @@
       </a-assets>
     </a-scene>
     
+    
     <!-- Show a button to switch to the multi-source example that shows detail. -->
     <!--button onClick="window.location.href='multi-source-detail.html'" style="position:absolute;top:10px;right:10px;">
       Switch to multi-source detail example
     </button-->
     <script>
-        function goToPortal() {
-                location.replace("main_menu_B.html")
+        function goToHome() {
+                location.replace("index.html")
         }
     </script>
   </body>
