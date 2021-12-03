@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Oculus Go Home Environment :: Lo-Fi-Plus Prototype showing Notifications</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+     <script src="examples/js/aframe-gui.js"></script>
+     <script src="examples/js/gui-env.js"></script>
+    <script>
+    AFRAME.registerComponent('navigate-on-click', {
+        schema: {
+            url: {default: ''}
+        },
+        
+        init: function () {
+            var data = this.data;
+            var el = this.el;
+            
+            el.addEventListener('click', function () {
+                window.location.href = data.url;
+            });
+        }
+    });
+    </script>
+</head>
+<body>
+    <a-scene cursor="rayOrigin: mouse">
+        <a-assets>
+            <!-- ***** SKY ***** -->
+            <!--Detailed CC BY 2.0 Atrribution information for the "sky" image "27416636695_d4096b1c20_o.jpg"
+            Author/Photographer: Kereplaz
+            Copyright: Some Rights Reserved
+            Title: pusiasalio lauks (1)
+            URI: https://www.flickr.com/photos/kereplaz/27416636695/in/photolist-HGf4Ko-JvByoP-JCq82F-Jzpke7-JvzX3R-JtqaV7-HH1LSm-HNVPQm-HLHCMD-HS4qXf-G1uYtQ-HC4Dbf-HGdkYE-JvxuoH-JCpptF-JCotcV-JvyCN6-JvyMAM-JtoHd1-HGbMkz-HGaDz6-KwtLkg-KtZmxq-KtZiMf-JfgCj5-JoC29E-NRxAoR-H8VLhL-MBAakq-M76TRJ-M76U6w-N1HWdf-HKH6JJ-HmBxxm-HM1fPg-GHp3PQ-GF6xk4-GR5CgP-HmmkZm-H21pkf-GR5AGX-GR5Bp8-HLHqUF-HHJBcS-H6kiP7-H6jEt5-JKkhi5-HS4roL-FFiCzg-HLHus2
+            Modifications: none
+            License: https://creativecommons.org/licenses/by/2.0/legalcode     -->
+            <img id="sky" src="img/bryan-goff-IuyhXAia8EA-unsplash.jpg">
+            <!--<img id="sky" src="img/27416636695_d4096b1c20_o.jpg">-->
+            <!-- <img id="sky" src="img/vr-prototyping-template_3600x1800.png"> -->
+            <!-- <img id="sky" src="img/OculusGo-HomeEnv-Notifications-lofi.png"> -->
+            <!-- ***** NOTIFICATIONS CONTENT ***** -->
+            <img id="notifications-content" src="img/OculusGo-Content-Notifications-All.png">
+            <img id="quotation" src="img/Statement.png">
+            <img id="sky-clean" src="img/retouched.jpg ">
+            <img id="beaver" src="beaver_for_menu_2.jpg">
+            
+            <!-- ***** UNIVERSAL MENU ***** -->
+            <img id="universal-menu" src="img/OculusGo-UniversalMenu-Notifications-ViewAll.png">
+            <img id="experiences" src="img/experiences_for_menu_11_27.jpg">
+            <img id="stories" src="img/stories_for_menu_11_27.jpg">
+    		<audio id="wind_howl" src="https://ghcdn.rawgit.org/luxzia/luxzia.github.io/master/wind-howl-01.mp3"></audio>    
+	</a-assets>
+         <a-entity progressive-controls></a-entity>
+        <a-entity camera look-controls wasd-controls position="0 1.6 -1">
+        <a-gui-cursor id="cursor"
+						  raycaster="objects: [gui-interactable]"
+						  fuse="true" fuse-timeout="2000"
+						  design="ring"
+				>
+        </a-gui-cursor>
+        </a-entity>
+        <!--a-entity id="camera" camera="userHeight: 5" look-controls cursor="rayOrigin: mouse"></a-entity-->
+         
+		
+        <!-- ***** SKY ***** -->
+        <a-sky src="#sky-clean" rotation="0 -145 0"></a-sky>
+        <!--<a-sky src="#sky" rotation="0 -90 0"></a-sky>--> <!--for the other 2 posible "sky" options-->
+        <!-- ***** NOTIFICATIONS CONTENT ***** -->
+		
+        <a-entity id="wind_howl_play" geometry="primitive: plane" material="color: transparent"
+          position="-10 0 0" rotation="0 90 0" sound="src: #wind_howl; autoplay: true; loop: true"></a-entity> 
+      	<a-text value="(re)imagine" text="anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 19; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Bold.json" position="0 5.1 -9"></a-text>
+        <!--<a-text value="Notifications" text="anchor:center; color:#000000; opacity:0.75; align:center; baseline:bottom; width: 5.2" position="0 4.10 -9"></a-text>-->
+        <!--a-curvedimage radius="9" src="#quotation" material="side:back" geometry="height:4.5; openEnded:true; thetaLength:61; thetaStart:149.5" position="0 1.7 0"></a-curvedimage-->
+        <!--a-curvedimage radius="9" src="#notifications-content" material="side:back" geometry="height:4.5; openEnded:true; thetaLength:61; thetaStart:149.5" position="0 1.7 0"></a-curvedimage-->
+        
+        <!-- Curved Image Primitive | 3-IMG LAYOUT | IMG size 1024x768 px -->
+        <!-- ? Radius of Arc -->
+        <!-- Width of Arc = 1 m -->
+        <!-- Length of Each IMG 0.69813m -->
+        <!-- Angle Subtended by Arc = 180 deg -->
+        <!-- Angle Subtended by Each IMG = 8 0 deg -->
+        <!-- ? IMG height (m) = width (m)/IMG width (px) * IMG height (px) -->
+        <!-- RIGHT IMG -->
+        <!--a-curvedimage src="#experiences"
+                       theta-length="80"
+                       theta-start="90"
+                       radius="0.5"
+                       height="1.04"
+                       position="0 1.7 0"
+                       scale="0.5 0.5 0.5">
+        </a-curvedimage-->
+        <a-image src="#beaver"
+                 position="-0.824 1.5 -2.583"
+                 width="1"
+                 height="1.5"
+                 scale="1.5 1.5 0.45"
+                 navigate-on-click="url:river_maybe.html">
+        </a-image>
+        
+        <a-text data-brackets-id="2519" value="" text="value:experiences; anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 5; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/raleway/Raleway-Regular.json" position="-0.824 0.3 -2.583">
+        <!--a-text value="experiences" text="anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 5; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/lora/Lora-Regular.json" position="-0.824 0.3 -2.583" navigate-on-click="url: experiences_menu.html"--></a-text>
+           <a-image src="#stories"
+                 position="0.776 1.5 -2.583"
+                 width="1"
+                 height="1.5"
+                 scale="1.5 1.5 0.45"
+                 navigate-on-click="url: test_menu.html">
+            </a-image>
+        
+        <a-text value="stories" text="anchor:center; color:#FFFFFF; align:center; baseline:bottom; width: 5; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/raleway/Raleway-Regular.json" position="0.776 0.3 -2.583" navigate-on-click="url: beaver_land.html"></a-text>
+        <!--a-curvedimage src="#experiences"
+                       theta-length="80"
+                       theta-start="90"
+                       radius="0.5"
+                       height="1.04"
+                       position="0 1.5 -0.5"
+                       scale="0.5 0.5 0.5">
+        </a-curvedimage-->
+        <!-- LEFT IMG -->
+        <!--a-curvedimage src="#stories"
+                       theta-length="80"
+                       theta-start="190"
+                       radius="0.5"
+                       height="1.04"
+                       position="0 1.7 -0.5"
+                       scale="0.5 0.5 0.5">
+        </a-curvedimage-->
+        <!-- ***** UNIVERSAL MENU ***** -->
+        <!--a-image src="#universal-menu" geometry="height:0.65; width:3.25" position="0 -0.2 -2.5" rotation="-33.75 0 0"></a-image-->
+         <a-gui-flex-container
+			id="test_click" flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="2.25" height="0.75"
+			position="0 0.35 -2" rotation="-10 0 0" scale="0.5 0.5 0.5"
+		>
+			<a-gui-button
+                id="quit"
+                value="Quit"
+                onclick="goToHome()"
+				width="1.5" height="0.5"
+				font-size="0.3"
+				font="examples/assets/fonts/fa-solid-900.ttf"
+                ></a-gui-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		</a-gui-flex-container>
+        <!-- a-text data-brackets-id="2519" value="" geometry="primitive:plane;segmentsWidth:10;width:4; height:0.5;" text="value: Quit" position="0 -0.2 -2.5" rotation="-33.75 0 0" navigate-on-click="url: quote.html"></a-text-->
+    </a-scene>
+    <script>
+    function goToHome() {
+            location.replace("index.html")
+        }
+    </script>
+        <!--script>
+	var entity=document.querySelector('[sound]');
+	entity.components.sound.playSound();
+</script-->
+</body>
+</html>
