@@ -1,0 +1,636 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        17.705228805541992,
+        38.12252426147461,
+        11.963518142700195
+      ],
+      "min": [
+        -14.110908508300781,
+        7.776449680328369,
+        -22.552013397216797
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 11040,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        0.9998531937599182,
+        0.9792885780334473,
+        0.9873446226119995
+      ],
+      "min": [
+        -0.9967432022094727,
+        -0.40862277150154114,
+        -0.997072696685791
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        0.999942421913147,
+        0.808530867099762,
+        0.9998661279678345,
+        1.0
+      ],
+      "min": [
+        -0.9997672438621521,
+        -0.6596574783325195,
+        -0.9996368885040283,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "min": [
+        0.10000000149011612,
+        0.10000002384185791
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 7360,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "min": [
+        0.10000000149011612,
+        0.10000002384185791
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 14720,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        1.0,
+        1.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 22080,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "min": [
+        0.10000000149011612,
+        0.10000002384185791
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 1380,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 22080,
+      "componentType": 5126,
+      "count": 26155,
+      "max": [
+        12.717116355895996,
+        36.21820831298828,
+        7.007631301879883
+      ],
+      "min": [
+        -8.73957633972168,
+        -0.0013702022843062878,
+        -18.73948097229004
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 335940,
+      "componentType": 5126,
+      "count": 26155,
+      "max": [
+        0.999991238117218,
+        0.9999727010726929,
+        0.9999831318855286
+      ],
+      "min": [
+        -0.9999525547027588,
+        -0.9999604225158691,
+        -0.9999890327453613
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 14720,
+      "componentType": 5126,
+      "count": 26155,
+      "max": [
+        0.9998996257781982,
+        0.9999926090240479,
+        0.9999867081642151,
+        1.0
+      ],
+      "min": [
+        -0.9999939799308777,
+        -0.9999971985816956,
+        -0.999955415725708,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 29440,
+      "componentType": 5126,
+      "count": 26155,
+      "max": [
+        2.923114776611328,
+        27.707550048828125
+      ],
+      "min": [
+        -0.9981934428215027,
+        -1.161850929260254
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 238680,
+      "componentType": 5126,
+      "count": 26155,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        1.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 447920,
+      "componentType": 5126,
+      "count": 26155,
+      "max": [
+        2.923114776611328,
+        27.707550048828125
+      ],
+      "min": [
+        -0.9981934428215027,
+        -1.161850929260254
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 5520,
+      "componentType": 5125,
+      "count": 110826,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 649800,
+      "componentType": 5126,
+      "count": 2750,
+      "max": [
+        17.468441009521484,
+        39.16263961791992,
+        11.80237865447998
+      ],
+      "min": [
+        -12.963361740112305,
+        9.007315635681152,
+        -23.186283111572266
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 682800,
+      "componentType": 5126,
+      "count": 2750,
+      "max": [
+        0.9995942115783691,
+        0.9938586354255676,
+        0.996127724647522
+      ],
+      "min": [
+        -0.9997287392616272,
+        -0.6122261881828308,
+        -0.9996983408927917
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 433200,
+      "componentType": 5126,
+      "count": 2750,
+      "max": [
+        0.9998026490211487,
+        0.853574275970459,
+        0.9999641180038452,
+        1.0
+      ],
+      "min": [
+        -0.998246967792511,
+        -0.7688426971435547,
+        -0.9990167617797852,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 657160,
+      "componentType": 5126,
+      "count": 2750,
+      "max": [
+        0.8611449599266052,
+        1.0
+      ],
+      "min": [
+        0.15225335955619812,
+        0.04080390930175781
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 679160,
+      "componentType": 5126,
+      "count": 2750,
+      "max": [
+        0.8611449599266052,
+        1.0
+      ],
+      "min": [
+        0.15225335955619812,
+        0.04080390930175781
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 701160,
+      "componentType": 5126,
+      "count": 2750,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        1.0,
+        1.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 723160,
+      "componentType": 5126,
+      "count": 2750,
+      "max": [
+        0.8611449599266052,
+        1.0
+      ],
+      "min": [
+        0.15225335955619812,
+        0.04080390930175781
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 448824,
+      "componentType": 5125,
+      "count": 9750,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "ASMA3D (https://sketchfab.com/ASMA3D)",
+      "license": "SKETCHFAB Editorial (https://sketchfab.com/licenses)",
+      "source": "https://sketchfab.com/3d-models/river-birch-sk-08-5bae5976429e43a5a9fe37992bd58eae",
+      "title": "River Birch-SK-08"
+    },
+    "generator": "Sketchfab-11.49.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 487824,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 745160,
+      "byteOffset": 487824,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 715800,
+      "byteOffset": 1232984,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 477200,
+      "byteOffset": 1948784,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 2425984,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Cluster_River_birch_08_Mat_baseColor.png"
+    },
+    {
+      "uri": "textures/Cluster_River_birch_08_Mat_normal.png"
+    },
+    {
+      "uri": "textures/River_birch_bark_06_Mat_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/River_birch_bark_06_Mat_normal.png"
+    },
+    {
+      "uri": "textures/Cluster_River_birch_09_Mat_baseColor.png"
+    },
+    {
+      "uri": "textures/Cluster_River_birch_09_Mat_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Cluster_River_birch_08_Mat",
+      "normalTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9577051494623774
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "River_birch_bark_06_Mat",
+      "normalTexture": {
+        "index": 3
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9577051494623774
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Cluster_River_birch_09_Mat",
+      "normalTexture": {
+        "index": 5
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 4
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9577051494623774
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "River_birch_SK_08_Cluster_River_birch_08_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5,
+            "TEXCOORD_3": 6
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "River_birch_SK_08_River_birch_bark_06_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TANGENT": 10,
+            "TEXCOORD_0": 11,
+            "TEXCOORD_1": 12,
+            "TEXCOORD_2": 13
+          },
+          "indices": 14,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "River_birch_SK_08_Cluster_River_birch_09_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 16,
+            "POSITION": 15,
+            "TANGENT": 17,
+            "TEXCOORD_0": 18,
+            "TEXCOORD_1": 19,
+            "TEXCOORD_2": 20,
+            "TEXCOORD_3": 21
+          },
+          "indices": 22,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "River birch-SK-08.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "name": "River_birch_SK_08"
+    },
+    {
+      "mesh": 0,
+      "name": "River_birch_SK_08_Cluster_River_birch_08_Mat_0"
+    },
+    {
+      "mesh": 1,
+      "name": "River_birch_SK_08_River_birch_bark_06_Mat_0"
+    },
+    {
+      "mesh": 2,
+      "name": "River_birch_SK_08_Cluster_River_birch_09_Mat_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    }
+  ]
+}
