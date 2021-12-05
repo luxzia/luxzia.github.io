@@ -1,0 +1,8 @@
+Model Information:
+* title:	Stylized forest
+* source:	https://sketchfab.com/3d-models/stylized-forest-3bf0f34b056642af829d466ab6f07d47
+* author:	Hene (https://sketchfab.com/Hene)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
