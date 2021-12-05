@@ -1,0 +1,690 @@
+<!doctype html>
+<html>
+    <title>Forest of Stories</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+  
+    <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+    <script>
+            AFRAME.registerComponent('navigate-on-click', {
+                schema: {
+                    url: {default: ''}
+                },
+
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+
+                    el.addEventListener('click', function () {
+                        window.location.href = data.url;
+                    });
+                }
+            });
+    </script>
+        <script>
+            AFRAME.registerComponent('foo', {
+                init: function() {
+                  this.el.addEventListener('click', e => {
+                    console.log('CLICKED')
+                  })
+                }
+              })
+              AFRAME.registerComponent('bar', {
+                init: function() {
+                  let toggle = false
+                  let explanation_text = document.getElementById("record_story_image")
+                  this.el.addEventListener('click', e => {
+                    if (toggle) {
+                      explanation_text.classList.add('clickable')
+                      explanation_text.setAttribute('visible', 'false')
+                    } else {
+                      explanation_text.classList.remove('clickable')
+                      explanation_text.setAttribute('visible', 'true')
+                    }
+                    toggle = !toggle
+                  })
+                }
+              })
+        </script>
+     <script src="aframe_gui/examples/js/aframe-gui.js"></script>
+     <script src="aframe_gui/examples/js/gui-env.js"></script>
+</html>
+<body>
+
+    <a-scene gui-env>
+        <a-assets>
+            <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+            <img id="forest_about" src="forest_of_stories_2.jpg">
+            <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+            <img id="record_story" src="RecordStory.jpg">
+            <a-asset-item id="forest" src="forest/scene.gltf"></a-asset-item>
+            <a-asset-item id="deciduous_forest" src="stylized_forest/scene.gltf"></a-asset-item>
+            <a-asset-item id="sakura_tree" src="sakura_tree_blossom_cherry/scene.gltf"></a-asset-item>
+            <!--a-asset-item id="triangle" src="shapes/triangle/scene.gltf"></a-asset-item>
+            <a-asset-item id="square" src="shapes/black_square/scene.gltf"></a-asset-item-->
+            <a-asset-item id="walnut_tree" src="common_walnut_tree_juglans_regia_4.8m/scene.gltf"></a-asset-item>
+            <audio id="greta_talk" src="climate_change_speech_greta_thunberg_ozd.mp3"></audio>
+            <a-asset-item id="mango_tree" src="realistic_looking_mango_tree/scene.gltf"></a-asset-item>
+            <audio id="nemonte_talk" src="Nemonte_Nenquimo.mp3"></audio>
+            <a-asset-item id="platano_tree" src="platano_tree/scene.gltf"></a-asset-item>
+            <audio id="disha_talk" src="disha_ravi.mp3"></audio>
+            <a-asset-item id="baobab_tree" src="african_baobab_med/scene.gltf"></a-asset-item>
+            <audio id="vanessa_talk" src="Vanessa_Nakate.mp3"></audio>
+            <a-asset-item id="kauri_tree" src="kauri_tree-_s2/scene.gltf"></a-asset-item>
+            <audio id="lucy_talk" src="Lucy_gray.mp3"></audio>
+            <!--a-asset-item id="rubber_tree" src="as08_ficus_elastica_rubber_fig/"></a-asset-item>
+            <audio id="siona_talk" src="Siona.mp3"></audio-->
+            <audio id="rainforest" src="//cdn.rawgit.com/michaelnebeling/src/master/rainforest_ambience-GlorySunz-1938133500.mp3" crossorigin="anonymous"></audio>
+            <canvas id="canvasObj" crossorigin="anonymous" webkit-playsinline=""></canvas>
+			<a-asset-item id="iconfontsolid" src="aframe_gui/examples/assets/fonts/fa-solid-900.ttf"></a-asset-item>
+			<a-asset-item id="iconfontbrand" src="aframe_gui/examples/assets/fonts/fa-brands-400.ttf"></a-asset-item>
+			<a-asset-item id="textfont" src="aframe_gui/examples/assets/fonts/DiplomataSC-Regular.ttf"></a-asset-item>	
+			<a-asset-item id="theater-obj" src="aframe_gui/examples/assets/theater.obj"></a-asset-item>
+            <a-asset-item id="3dandelion_seed" src="sculptjanuary19_day06_minimalistic_-_tiny/scene.gltf"></a-asset-item>
+	        <!--video id="film" autoplay loop="true" muted webkit-playsinline playsinline src="assets/minority.mp4"></video-->
+        </a-assets>
+        
+        <a-entity progressive-controls></a-entity>
+        <a-entity camera look-controls wasd-controls position="0 1.2 0">
+        <a-gui-cursor id="cursor"
+						  raycaster="objects: [gui-interactable]"
+						  fuse="true" fuse-timeout="2000"
+						  design="ring"
+				>
+				</a-gui-cursor>
+        </a-entity>
+        <a-sky src="#skyTexture"></a-sky>
+        <a-image src="#forest_about" position="-0.388 1.6 -1.05771" height="0.357" width="1" material="" geometry=""></a-image>
+        
+        <a-gui-flex-container
+			id="test_click" flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="2.25" height="0.75"
+			position="-0.84 1.304 -1.25" rotation="-10 0 0" scale="0.2 0.2 0.2"
+		>
+			<a-gui-button
+                id="quit"
+                value="Quit"
+                onclick="goToHome()"
+				width="1.5" height="0.5"
+				font-size="0.3"
+				font="examples/assets/fonts/fa-solid-900.ttf"
+                ></a-gui-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		</a-gui-flex-container>
+        <a-gui-flex-container
+			id="test_click" flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="2.25" height="0.75"
+			position="-0.38 1.304 -1.25" rotation="-10 0 0" scale="0.2 0.2 0.2"
+		>
+			<a-gui-button
+                id="back"
+                value="Back"
+                onclick="goToMenu()"
+				width="1.5" height="0.5"
+				font-size="0.3"
+				font="examples/assets/fonts/fa-solid-900.ttf"
+                ></a-gui-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		</a-gui-flex-container>
+        
+        <a-entity id="greta_tree" gltf-model="for_the_forest/common_walnut_tree_juglans_regia_4.8m/scene.gltf" sound="src: climate_change_speech_greta_thunberg_ozd.mp3" position="-5 0 5" scale="0.03 0.03 0.03">
+            <!--a-entity id="play_triangle" gltf-model="#triangle" position="-0.5 1 0" play></a-entity-->
+            <!--a-entity id="play_triangle" gltf-model="shapes/triangle/scene.gltf" position="-24.95762 56.10358 -13.281" play rotation="180 90 90" scale="0.3 0.3 0.3"></a-entity-->
+            <!--a-entity id="stop_square" gltf-model="shapes/black_square/scene.gltf" position="21.15343 57.84928 -4.3369" scale="0.1 0.1 0.1" stop></a-entity-->
+        </a-entity>
+        
+        <a-gui-flex-container
+			flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="5.5" height="1"
+			position="-5.028 1.675 4.976" rotation="0 0 90" scale="0.5 0.5 0.5"
+		>
+			<a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="toggleGretaSound"
+				icon="f6a9"
+				icon-font-size="0.4"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+            </a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="stopGreta"
+				icon="f04d"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75" rotation="0 0 270"
+				onclick="toggleGretaPlayback"
+				icon="f04b"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		</a-gui-flex-container>
+        
+        <!-- BEGINNING OF DISHA TALK -->
+        <a-entity id="disha_tree" gltf-model="#mango_tree" sound="src: disha_ravi.mp3" position="12.033 0 3.362" scale="2.0 2.0 2.0"></a-entity>
+        
+        <a-gui-flex-container
+			flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="5.5" height="1"
+			position="12 1 3.3 " rotation="0 0 90" scale="0.5 0.5 0.5"
+		>
+			<a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="toggleDishaSound"
+				icon="f6a9"
+				icon-font-size="0.4"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+            </a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="stopDisha"
+				icon="f04d"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75" rotation="0 0 270"
+				onclick="toggleDishaPlayback"
+				icon="f04b"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		</a-gui-flex-container>
+        <!-- END OF DISHA TALK -->
+        
+         <!-- BEGINNING OF NEMONTE TALK -->
+        <a-entity id="nemonte_tree" gltf-model="#platano_tree" sound="src: Nemonte_Nenquimo.mp3" position="10 0 16.606" scale="0.01 0.01 0.01"></a-entity>
+        
+        <a-gui-flex-container
+			flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="5.5" height="1"
+			position="10.05 1 16.7" rotation="0 0 90" scale="0.5 0.5 0.5"
+		>
+			<a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="toggleNemonteSound"
+				icon="f6a9"
+				icon-font-size="0.4"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+            </a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="stopNemonte"
+				icon="f04d"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75" rotation="0 0 270"
+				onclick="toggleNemontePlayback"
+				icon="f04b"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		</a-gui-flex-container>
+        <!-- END OF NEMONTE TALK -->
+        
+         <!-- BEGINNING OF VANESSA TALK -->
+        <a-entity id="vanessa_tree" gltf-model="#baobab_tree" sound="src: Vanessa_Nakate.mp3" position="-14.9 11.707 -4.018" scale="0.3 0.3 0.3"></a-entity>
+        
+        <a-gui-flex-container
+			flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="5.5" height="1"
+			position="-16.108 1.030 -1.430" rotation="0 0 90" scale="0.5 0.5 0.5"
+		>
+			<a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="toggleVanessaSound"
+				icon="f6a9"
+				icon-font-size="0.4"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+            </a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="stopVanessa"
+				icon="f04d"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75" rotation="0 0 270"
+				onclick="toggleVanessaPlayback"
+				icon="f04b"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		</a-gui-flex-container>
+        <!-- END OF VANESSA TALK -->
+        
+          <!-- BEGINNING OF LUCY TALK -->
+        <a-entity id="lucy_tree" gltf-model="#kauri_tree" sound="src: Lucy_gray.mp3" position="-12 0 -8" scale="0.3 0.3 0.3"></a-entity>
+        
+        <a-gui-flex-container
+			flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="5.5" height="1"
+			position="-12.05 1.030 -7.5" rotation="0 0 90" scale="0.5 0.5 0.5"
+		>
+			<a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="toggleLucySound"
+				icon="f6a9"
+				icon-font-size="0.4"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+            </a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="stopLucy"
+				icon="f04d"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+            <a-gui-icon-button
+				width="0.75" height="0.75" rotation="0 0 270"
+				onclick="toggleLucyPlayback"
+				icon="f04b"
+				icon-font-size="0.3"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+			>
+			</a-gui-icon-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		</a-gui-flex-container>
+        <!-- END OF LUCY TALK -->
+        
+        <a-image id="record_story_image"
+                 src="#record_story" position="0.289 1.4 -0.686" rotation="0 -50 0" 
+                 height="1"
+                 width="0.607"
+                 visible=false
+                 scale="1 1 0.5">
+        </a-image>
+        <a-entity id="flooded_dandelion_seed"
+                  gltf-model="#3dandelion_seed" 
+                  position="-0.925 0.954 -1.324"
+                  rotation="0 90 0"
+                  scale="0.3 0.3 0.3"
+                  grabbable
+                  event-set__start="_event: grab-start;
+                                    _target: #record_story_image; 
+                                    visible: true"
+                  event-set__end="_event: grab-end;
+                                  _target: #record_story_image;
+                                  visible: false"></a-entity>
+        
+         <!--a-image id="record_story_image"
+                 src="#record_story" position="-0.287 1.240 0.201" 
+                 height="0.607"
+                 width="1"
+                 visible=false
+                 scale="1 1 0.5">
+        </a-image>
+        <a-image id="plus_sign_button"
+                  gltf-model="#plus_sign" 
+                  position="-0.071 1.476 -0.964"
+                  rotation="0 0 90"
+                  grabbable
+                  event-set__start="_event: grab-start;
+                                    _target: #record_story_image; 
+                                    visible: true"
+                  event-set__end="_event: grab-end;
+                                  _target: #record_story_image;
+                                  visible: false">
+        </a-image-->
+        
+        
+        
+        
+        
+        <!--a-image perspective_explanation_text
+                 id="record_story_image"
+                 src="#record_story" position="-0.287 1.240 0.201"
+                 height="0.607"
+                 width="1"
+                 visible=false
+                 scale="1 1 0.5"
+                 foo>
+        </a-image>
+        <a-image explanation_text
+                 id="plus_sign_button"
+                 src="#plus_sign"
+                 position="-0.071 1.476 -0.964"
+                 rotation="0 0 90"
+                 scale="0.07 0.07 0.07"
+                 visible="true"
+                 clickable
+                 bar>
+        </a-image-->
+           <!--a-image explanation_text
+                 id="perspective_explanation_text"
+                 src="#perspectives_explanation" position="0 1.8 -2.2"
+                 height="0.714"
+                 width="1"
+                 visible=false
+                 scale="3 3 2"
+                 foo>
+        </a-image>
+        <a-image explanation_text
+                 id="explanation_button"
+                 src="#explanation_button_image"
+                 position="0 0.45 -2.2"
+                 height="0.143"
+                 width="1"
+                 visible="true"
+                 class="clickable"
+                 bar>
+        </a-image-->
+            
+        
+        <!--a-gui-flex-container
+			id="test_click" flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="5.5" height="1"
+			position="-1.727 0.377 -1.878" rotation="0 0 90" scale="0.5 0.5 0.5"
+		>
+			<a-gui-icon-button
+                onclick="quitApp()"
+				width="0.75" height="0.75"
+				icon="f6a9"
+				icon-font-size="0.4"
+				icon-font="examples/assets/fonts/fa-solid-900.ttf"
+                               ></a-gui-icon-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		<!--/a-gui-flex-container-->
+        
+        <!--a-gui-flex-container
+			id="portal_test" flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1"
+			opacity="0.7" width="5.5" height="1"
+			position="-0.98 0.35 -1.875" rotation="0 0 0" scale="0.5 0.5 0.5"
+		>
+			<a-gui-button
+                id="go_to_portal"
+                value="Continue"
+                onclick="goToPortal()"
+				width="5" height="0.75"
+				font-size="0.7"
+				font="examples/assets/fonts/fa-solid-900.ttf"
+                ></a-gui-button>
+			<!--a-gui-toggle
+				width="2.75" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="examples/assets/fonts/DiplomataSC-Regular.ttf"
+			>
+			</a-gui-toggle-->
+		<!--/a-gui-flex-container-->
+        
+        <!-- Quit Button -->
+        <!--a-text data-brackets-id="2519" value="" geometry="primitive: plane; segmentsWidth: 10; height: 0.3" text="value: Quit" position="-1.72739 0.37683 -1.87815" rotation="-40 0 0" navigate-on-click="url: quote.html" class="clickable"></a-text-->
+
+        <!-- Main Menu Button -->
+       <!--a-text data-brackets-id="2519" value="" geometry="primitive: plane; segmentsWidth: 10; width: 2.3; height: 0.3" text="value: Main Menu" position="-0.98 0.35 -1.875" rotation="-40 0 0" navigate-on-click="url: main_menu_working.html" class="clickable"></a-text-->
+            
+        <!-- Go to Record Button -->
+      <!--a-text data-brackets-id="2519" value="" geometry="primitive: plane; segmentsWidth: 10; width: 1.5; height: 0.3" text="value: Record" position="0.48751 0.36517 -1.893" rotation="-40 0 0" navigate-on-click="url: experiences_menu.html" class="clickable"></a-text-->
+        <a-entity id="river" geometry="primitive: plane" material="color: transparent"
+          position="-10 0 0" rotation="0 90 0" sound="src: #rainforest; autoplay: true; loop: true"></a-entity>
+        <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+        <a-entity id="forest_1" gltf-model="#forest" position="0 0 -9.278"  rotation="0.0 270.0 0"></a-entity>
+         <a-entity id="forest_2" gltf-model="#deciduous_forest" position="0 -35.0 0" scale="0.07 0.07 0.07"></a-entity>
+        <a-entity id="sakura_tree_main" gltf-model="#sakura_tree" position="-0.178 0 -2.321" scale="0.0009 0.0009 0.0009" rotation="0 60.0 0"></a-entity>
+       
+        <!--a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane-->
+    </a-scene>
+    <script type="text/javascript">
+        /* BEGINNING GRETA CODE */
+	    var video_el = document.getElementById("greta_talk");
+
+		function toggleGretaPlayback () {
+			console.log('play/pause sound');
+			if(!video_el.paused){
+            	video_el.pause();
+        	}
+        	else {
+            	video_el.play();
+        	}
+
+			// var filmEl = document.getElementById('video')
+			// var material = Object.assign({}, filmEl.getAttribute('material'))
+			// material.pause = !material.pause
+			// filmEl.setAttribute('material', material)
+		}
+		function stopGreta () {
+			console.log('stop movie');
+			video_el.pause();
+		}
+		function toggleGretaSound () {
+			console.log('toggleSound on/off');
+			if(!video_el.muted){
+            	video_el.muted == true;
+        	}
+        	else {
+            	video_el.muted == false;
+        	}
+
+		}
+        
+        /* BEGINNING DISHA CODE */
+        
+        var video_di = document.getElementById("disha_talk");
+
+		function toggleDishaPlayback () {
+			console.log('play/pause sound');
+			if(!video_di.paused){
+            	video_di.pause();
+        	}
+        	else {
+            	video_di.play();
+        	}
+
+			// var filmEl = document.getElementById('video')
+			// var material = Object.assign({}, filmEl.getAttribute('material'))
+			// material.pause = !material.pause
+			// filmEl.setAttribute('material', material)
+		}
+		function stopDisha () {
+			console.log('stop movie');
+			video_di.pause();
+		}
+		function toggleDishaSound () {
+			console.log('toggleSound on/off');
+			if(!video_di.muted){
+            	video_di.muted == true;
+        	}
+        	else {
+            	video_di.muted == false;
+        	}
+
+		}
+        
+         /* BEGINNING NEMONTE CODE */
+        
+        var video_ne = document.getElementById("nemonte_talk");
+
+		function toggleNemontePlayback () {
+			console.log('play/pause sound');
+			if(!video_ne.paused){
+            	video_ne.pause();
+        	}
+        	else {
+            	video_ne.play();
+        	}
+
+			// var filmEl = document.getElementById('video')
+			// var material = Object.assign({}, filmEl.getAttribute('material'))
+			// material.pause = !material.pause
+			// filmEl.setAttribute('material', material)
+		}
+		function stopNemonte () {
+			console.log('stop movie');
+			video_ne.pause();
+		}
+		function toggleNemonteSound () {
+			console.log('toggleSound on/off');
+			if(!video_ne.muted){
+            	video_ne.muted == true;
+        	}
+        	else {
+            	video_ne.muted == false;
+        	}
+
+		}
+        
+        /* BEGINNING VANESSA CODE */
+        
+        var video_va = document.getElementById("vanessa_talk");
+
+		function toggleVanessaPlayback () {
+			console.log('play/pause sound');
+			if(!video_va.paused){
+            	video_va.pause();
+        	}
+        	else {
+            	video_va.play();
+        	}
+
+			// var filmEl = document.getElementById('video')
+			// var material = Object.assign({}, filmEl.getAttribute('material'))
+			// material.pause = !material.pause
+			// filmEl.setAttribute('material', material)
+		}
+		function stopVanessa () {
+			console.log('stop movie');
+			video_va.pause();
+		}
+		function toggleVanessaSound () {
+			console.log('toggleSound on/off');
+			if(!video_va.muted){
+            	video_va.muted == true;
+        	}
+        	else {
+            	video_va.muted == false;
+        	}
+
+		}
+        
+        /* BEGINNING LUCY CODE */
+        
+        var video_va = document.getElementById("lucy_talk");
+
+		function toggleLucyPlayback () {
+			console.log('play/pause sound');
+			if(!video_va.paused){
+            	video_va.pause();
+        	}
+        	else {
+            	video_va.play();
+        	}
+
+			// var filmEl = document.getElementById('video')
+			// var material = Object.assign({}, filmEl.getAttribute('material'))
+			// material.pause = !material.pause
+			// filmEl.setAttribute('material', material)
+		}
+		function stopLucy () {
+			console.log('stop movie');
+			video_va.pause();
+		}
+		function toggleLucySound () {
+			console.log('toggleSound on/off');
+			if(!video_va.muted){
+            	video_va.muted == true;
+        	}
+        	else {
+            	video_va.muted == false;
+        	}
+
+		}
+        
+        
+		function toggleCaps () {
+			console.log('toggleCaps visible/hidden');
+		}
+        
+        function goToHome() {
+            location.replace("index.html")
+        }
+        
+        function goToMenu() {
+            location.replace("main_menu_A.html")
+        }
+        
+        function goHomeScreen  () {
+            document.getElementById("#quit").onclick = function () {
+                location.href = "quote.html";
+            }
+        }
+        
+        function goToPortal () {
+            document.getElementById("#go_to_portal").onclick = function () {
+                location.href = "test.html";
+            }
+        }
+    </script>
+</body>
