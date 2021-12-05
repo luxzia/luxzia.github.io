@@ -1,0 +1,636 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 27267,
+      "max": [
+        11.118496894836426,
+        24.6811466217041,
+        7.8036112785339355
+      ],
+      "min": [
+        -9.378925323486328,
+        -0.9684848189353943,
+        -7.3985795974731445
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 327204,
+      "componentType": 5126,
+      "count": 27267,
+      "max": [
+        0.9999966621398926,
+        0.9999895095825195,
+        0.999988853931427
+      ],
+      "min": [
+        -0.999922513961792,
+        -0.9999908804893494,
+        -0.9999808073043823
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 27267,
+      "max": [
+        0.9999839663505554,
+        0.9999992847442627,
+        0.9999983906745911,
+        1.0
+      ],
+      "min": [
+        -0.9999486804008484,
+        -0.9999985694885254,
+        -0.9999994039535522,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 27267,
+      "max": [
+        2.881899833679199,
+        16.943714141845703
+      ],
+      "min": [
+        -0.9893798828125,
+        -1.1371116638183594
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 218136,
+      "componentType": 5126,
+      "count": 27267,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        1.0,
+        1.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 436272,
+      "componentType": 5126,
+      "count": 27267,
+      "max": [
+        2.881899833679199,
+        16.943714141845703
+      ],
+      "min": [
+        -0.9893798828125,
+        -1.1371116638183594
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 119772,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 654408,
+      "componentType": 5126,
+      "count": 26720,
+      "max": [
+        11.529304504394531,
+        25.738229751586914,
+        8.432148933410645
+      ],
+      "min": [
+        -10.346003532409668,
+        5.097901344299316,
+        -8.11023998260498
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 975048,
+      "componentType": 5126,
+      "count": 26720,
+      "max": [
+        0.9999789595603943,
+        0.9020089507102966,
+        0.9999650716781616
+      ],
+      "min": [
+        -0.9999430179595947,
+        -0.9999974966049194,
+        -0.9999924302101135
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 436272,
+      "componentType": 5126,
+      "count": 26720,
+      "max": [
+        0.9999887347221375,
+        0.9998623728752136,
+        0.9999827146530151,
+        1.0
+      ],
+      "min": [
+        -0.9999672174453735,
+        -0.9997673630714417,
+        -0.9999441504478455,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 654408,
+      "componentType": 5126,
+      "count": 26720,
+      "max": [
+        0.9602543115615845,
+        0.9936407208442688
+      ],
+      "min": [
+        0.149443581700325,
+        0.0540541410446167
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 868168,
+      "componentType": 5126,
+      "count": 26720,
+      "max": [
+        0.9602543115615845,
+        0.9936407208442688
+      ],
+      "min": [
+        0.149443581700325,
+        0.0540541410446167
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1081928,
+      "componentType": 5126,
+      "count": 26720,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        1.0,
+        1.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1295688,
+      "componentType": 5126,
+      "count": 26720,
+      "max": [
+        0.9602543115615845,
+        0.9936407208442688
+      ],
+      "min": [
+        0.149443581700325,
+        0.0540541410446167
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 479088,
+      "componentType": 5125,
+      "count": 88176,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1295688,
+      "componentType": 5126,
+      "count": 26960,
+      "max": [
+        11.662922859191895,
+        25.103437423706055,
+        8.485676765441895
+      ],
+      "min": [
+        -9.607272148132324,
+        5.0747904777526855,
+        -8.168502807617188
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1619208,
+      "componentType": 5126,
+      "count": 26960,
+      "max": [
+        0.9999895095825195,
+        0.9262390732765198,
+        0.9999052882194519
+      ],
+      "min": [
+        -0.9999902248382568,
+        -0.999887228012085,
+        -0.9999801516532898
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 863792,
+      "componentType": 5126,
+      "count": 26960,
+      "max": [
+        0.9999592900276184,
+        0.9998728632926941,
+        0.9999905824661255,
+        1.0
+      ],
+      "min": [
+        -0.9999368190765381,
+        -0.9999378323554993,
+        -0.9999696612358093,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1509448,
+      "componentType": 5126,
+      "count": 26960,
+      "max": [
+        0.9602543115615845,
+        0.9936407208442688
+      ],
+      "min": [
+        0.149443581700325,
+        0.0540541410446167
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1725128,
+      "componentType": 5126,
+      "count": 26960,
+      "max": [
+        0.9602543115615845,
+        0.9936407208442688
+      ],
+      "min": [
+        0.149443581700325,
+        0.0540541410446167
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1940808,
+      "componentType": 5126,
+      "count": 26960,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        1.0,
+        1.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2156488,
+      "componentType": 5126,
+      "count": 26960,
+      "max": [
+        0.9602543115615845,
+        0.9936407208442688
+      ],
+      "min": [
+        0.149443581700325,
+        0.0540541410446167
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 831792,
+      "componentType": 5125,
+      "count": 88968,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "ASMA3D (https://sketchfab.com/ASMA3D)",
+      "license": "SKETCHFAB Editorial (https://sketchfab.com/licenses)",
+      "source": "https://sketchfab.com/3d-models/kauri-tree-s2-4c670932bc1e44059443879b00b5bf6f",
+      "title": "Kauri tree- S2"
+    },
+    "generator": "Sketchfab-11.49.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1187664,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2372168,
+      "byteOffset": 1187664,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1942728,
+      "byteOffset": 3559832,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1295152,
+      "byteOffset": 5502560,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 6797712,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Bark_6_Mat_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Bark_6_Mat_normal.png"
+    },
+    {
+      "uri": "textures/leaf_main_leaf_1_Mat_baseColor.png"
+    },
+    {
+      "uri": "textures/leaf_main_leaf_1_Mat_normal.png"
+    },
+    {
+      "uri": "textures/leaf_main_leaf_1_light_Mat_baseColor.png"
+    },
+    {
+      "uri": "textures/leaf_main_leaf_1_light_Mat_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Bark_6_Mat",
+      "normalTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9577051494623774
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "leaf_main_leaf_1_Mat",
+      "normalTexture": {
+        "index": 3
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9577051494623774
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "leaf_main_leaf_1_light_Mat",
+      "normalTexture": {
+        "index": 5
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 4
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9577051494623774
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Kauri_8m_Bark_6_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5
+          },
+          "indices": 6,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Kauri_8m_leaf_main_leaf_1_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 8,
+            "POSITION": 7,
+            "TANGENT": 9,
+            "TEXCOORD_0": 10,
+            "TEXCOORD_1": 11,
+            "TEXCOORD_2": 12,
+            "TEXCOORD_3": 13
+          },
+          "indices": 14,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Kauri_8m_leaf_main_leaf_1_light_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 16,
+            "POSITION": 15,
+            "TANGENT": 17,
+            "TEXCOORD_0": 18,
+            "TEXCOORD_1": 19,
+            "TEXCOORD_2": 20,
+            "TEXCOORD_3": 21
+          },
+          "indices": 22,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Kauri-8m.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "name": "Kauri_8m"
+    },
+    {
+      "mesh": 0,
+      "name": "Kauri_8m_Bark_6_Mat_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Kauri_8m_leaf_main_leaf_1_Mat_0"
+    },
+    {
+      "mesh": 2,
+      "name": "Kauri_8m_leaf_main_leaf_1_light_Mat_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    }
+  ]
+}
