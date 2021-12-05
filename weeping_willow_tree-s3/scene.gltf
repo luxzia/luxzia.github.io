@@ -1,0 +1,675 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 49909,
+      "max": [
+        38.809989929199219,
+        63.765121459960938,
+        24.228242874145508
+      ],
+      "min": [
+        -36.181632995605469,
+        -1.9399273298859043e-07,
+        -41.996635437011719
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 598908,
+      "componentType": 5126,
+      "count": 49909,
+      "max": [
+        0.99997603893280029,
+        0.99999481439590454,
+        0.99998736381530762
+      ],
+      "min": [
+        -0.99996322393417358,
+        -0.9999968409538269,
+        -0.99999785423278809
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 49909,
+      "max": [
+        0.99999183416366577,
+        0.99999082088470459,
+        0.99998706579208374,
+        1
+      ],
+      "min": [
+        -0.99997526407241821,
+        -0.9999886155128479,
+        -0.99997496604919434,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 49909,
+      "max": [
+        2.9599080085754395,
+        7.7023963928222656
+      ],
+      "min": [
+        -0.96877098083496094,
+        -1.155449390411377
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 399272,
+      "componentType": 5126,
+      "count": 49909,
+      "max": [
+        1,
+        0.98858469724655151
+      ],
+      "min": [
+        1,
+        0.25000011920928955
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 798544,
+      "componentType": 5126,
+      "count": 49909,
+      "max": [
+        2.9599080085754395,
+        7.7023963928222656
+      ],
+      "min": [
+        -0.96877098083496094,
+        -1.155449390411377
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 257292,
+      "max": [
+        49908
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1197816,
+      "componentType": 5126,
+      "count": 4252,
+      "max": [
+        43.861560821533203,
+        65.728721618652344,
+        30.708288192749023
+      ],
+      "min": [
+        -44.249366760253906,
+        7.4879603385925293,
+        -45.673137664794922
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1248840,
+      "componentType": 5126,
+      "count": 4252,
+      "max": [
+        0.99992924928665161,
+        0.44970420002937317,
+        0.99997401237487793
+      ],
+      "min": [
+        -1,
+        -0.38187035918235779,
+        -0.99955230951309204
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 798544,
+      "componentType": 5126,
+      "count": 4252,
+      "max": [
+        0.99993431568145752,
+        0.51273149251937866,
+        0.99994945526123047,
+        1
+      ],
+      "min": [
+        -1,
+        -0.51774317026138306,
+        -0.9999808669090271,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1197816,
+      "componentType": 5126,
+      "count": 4252,
+      "max": [
+        1,
+        1
+      ],
+      "min": [
+        0,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1231832,
+      "componentType": 5126,
+      "count": 4252,
+      "max": [
+        1,
+        1
+      ],
+      "min": [
+        0,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1265848,
+      "componentType": 5126,
+      "count": 4252,
+      "max": [
+        1,
+        0.88392877578735352
+      ],
+      "min": [
+        1,
+        0.2567448616027832
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1299864,
+      "componentType": 5126,
+      "count": 4252,
+      "max": [
+        1,
+        1
+      ],
+      "min": [
+        0,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1029168,
+      "componentType": 5125,
+      "count": 6378,
+      "max": [
+        4251
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1299864,
+      "componentType": 5126,
+      "count": 133,
+      "max": [
+        34.531692504882812,
+        56.266857147216797,
+        17.476425170898438
+      ],
+      "min": [
+        -30.255270004272461,
+        37.801055908203125,
+        -30.04779052734375
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1301460,
+      "componentType": 5126,
+      "count": 133,
+      "max": [
+        0.99380135536193848,
+        0.97016578912734985,
+        0.99570095539093018
+      ],
+      "min": [
+        -0.99814456701278687,
+        -0.90910661220550537,
+        -0.97857087850570679
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 866576,
+      "componentType": 5126,
+      "count": 133,
+      "max": [
+        0.99194216728210449,
+        0.98962116241455078,
+        0.99845480918884277,
+        1
+      ],
+      "min": [
+        -0.97303783893585205,
+        -0.43058392405509949,
+        -0.98468250036239624,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1333880,
+      "componentType": 5126,
+      "count": 133,
+      "max": [
+        1,
+        0.97552824020385742
+      ],
+      "min": [
+        0,
+        0.00030457973480224609
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1334944,
+      "componentType": 5126,
+      "count": 133,
+      "max": [
+        1,
+        0.95086616277694702
+      ],
+      "min": [
+        1,
+        0.25413107872009277
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1336008,
+      "componentType": 5126,
+      "count": 133,
+      "max": [
+        1,
+        0.97552824020385742
+      ],
+      "min": [
+        0,
+        0.00030457973480224609
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1054680,
+      "componentType": 5125,
+      "count": 348,
+      "max": [
+        132
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "ASMA 3D (https://sketchfab.com/greenkish2020)",
+      "license": "SKETCHFAB Standard (https://sketchfab.com/licenses)",
+      "source": "https://sketchfab.com/3d-models/weeping-willow-tree-s3-62c8a3e2c9874587919d352ed2a6254a",
+      "title": "Weeping Willow Tree-S3"
+    },
+    "generator": "Sketchfab-9.62.3",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1056072,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1337072,
+      "byteOffset": 1056072,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1303056,
+      "byteOffset": 2393144,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 868704,
+      "byteOffset": 3696200,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 4564904,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Bark_Mat_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Bark_Mat_normal.png"
+    },
+    {
+      "uri": "textures/Leaves_Mat_baseColor.png"
+    },
+    {
+      "uri": "textures/Leaves_Mat_normal.png"
+    },
+    {
+      "uri": "textures/Cap_Mat_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Cap_Mat_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Bark_Mat",
+      "normalTexture": {
+        "index": 1,
+        "scale": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.95770514946237739
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Leaves_Mat",
+      "normalTexture": {
+        "index": 3,
+        "scale": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 2,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.95770514946237739
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Cap_Mat",
+      "normalTexture": {
+        "index": 5,
+        "scale": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 4,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.95770514946237739
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Weeping_Willow_Tree_S3_Bark_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5
+          },
+          "indices": 6,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Weeping_Willow_Tree_S3_Leaves_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 8,
+            "POSITION": 7,
+            "TANGENT": 9,
+            "TEXCOORD_0": 10,
+            "TEXCOORD_1": 11,
+            "TEXCOORD_2": 12,
+            "TEXCOORD_3": 13
+          },
+          "indices": 14,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Weeping_Willow_Tree_S3_Cap_Mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 16,
+            "POSITION": 15,
+            "TANGENT": 17,
+            "TEXCOORD_0": 18,
+            "TEXCOORD_1": 19,
+            "TEXCOORD_2": 20
+          },
+          "indices": 21,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "Weeping Willow Tree-S3.fbx"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5,
+        6,
+        7
+      ],
+      "name": "Weeping_Willow_Tree_S3"
+    },
+    {
+      "mesh": 0,
+      "name": "Weeping_Willow_Tree_S3_Bark_Mat_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Weeping_Willow_Tree_S3_Leaves_Mat_0"
+    },
+    {
+      "mesh": 2,
+      "name": "Weeping_Willow_Tree_S3_Cap_Mat_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    }
+  ]
+}
+
