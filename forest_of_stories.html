@@ -631,12 +631,12 @@
         
         /* BEGINNING LUCY CODE */
         
-        var video_va = document.getElementById("lucy_talk");
+        var video_lu = document.getElementById("lucy_talk");
 
 		function toggleLucyPlayback () {
 			console.log('play/pause sound');
-			if(!video_va.paused){
-            	video_va.pause();
+			if(!video_lu.paused){
+            	video_lu.pause();
         	}
         	else {
             	video_va.play();
@@ -649,15 +649,15 @@
 		}
 		function stopLucy () {
 			console.log('stop movie');
-			video_va.pause();
+			video_lu.pause();
 		}
 		function toggleLucySound () {
 			console.log('toggleSound on/off');
-			if(!video_va.muted){
-            	video_va.muted == true;
+			if(!video_lu.muted){
+            	video_lu.muted == true;
         	}
         	else {
-            	video_va.muted == false;
+            	video_lu.muted == false;
         	}
 
 		}
