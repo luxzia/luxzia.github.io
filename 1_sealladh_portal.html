@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Oculus Go Home Environment :: Lo-Fi-Plus Prototype showing Notifications</title>
+    <title>Sealladh Portal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
@@ -53,10 +53,11 @@
         <a-sky src="#portal"y rotation="0 -145 0"></a-sky>
         <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
 
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow
+        <a-box position="5.4 -3 -1" rotation="0 15 0" color="#4CC3D9" width="0.3" shadow
+             scale="0.5 0.5 0.5"
              event-set__enter="_event: mouseenter; color: #026fc9"
              event-set__leave="_event: mouseleave; color: #4CC3D9"
-             navigate-on-click="url: http://google.com">
+             navigate-on-click="url: 2_sealladh_main_menu.html">
         </a-box>
         <!--<a-sky src="#sky" rotation="0 -90 0"></a-sky>--> <!--for the other 2 posible "sky" options-->
         <!-- ***** NOTIFICATIONS CONTENT ***** -->
