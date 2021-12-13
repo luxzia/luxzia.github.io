@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Sealladh Explore Change Menu</title>
+    <title>Sealladh Beaver Land</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-     <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
     <script>
         AFRAME.registerComponent('navigate-on-click', {
             schema: {
@@ -40,37 +39,26 @@
             <!-- <img id="sky" src="img/vr-prototyping-template_3600x1800.png"> -->
             <!-- <img id="sky" src="img/OculusGo-HomeEnv-Notifications-lofi.png"> -->
             <!-- ***** NOTIFICATIONS CONTENT ***** -->
-            <img id="portal" src="SEALLADH_ENTRY_SCREEN 13.1 Mpx 2021-11-21 17_24_08.jpg">
-            <img id="explore_main_menu" src="SEALLADH_EXPLORE_FULL_MENU 13.1 Mpx 2021-11-21 17_35_57.jpg">
-            <img id="time_explaination" src="SEALLADH_EXPLORE_TIME_EXPLANATION.jpg">
-            <img id="time_slider" src="SEALLADH_EXPLORE_TIME_SLIDER.jpg">
-            <img id="change_information" src="SEALLADH_EXPLORE_CHANGE_INFORMATION 13.1 Mpx 2021-11-21 17_43_36.jpg">
-            <img id="change_menu" src="SEALLADH_EXPLORE_CHANGE_MENU.jpg">
+            <img id="beaver_land" src="beaver_land.jpg">
             <img id="notifications-content" src="img/OculusGo-Content-Notifications-All.png">
             <img id="quotation" src="img/Statement.png">
             <!-- ***** UNIVERSAL MENU ***** -->
             <img id="universal-menu" src="img/OculusGo-UniversalMenu-Notifications-ViewAll.png">
     		<audio id="wind" src="img/wind.mp3"></audio>    
 	</a-assets>
-        <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
+        
+        
 		<a-entity sound="src: #wind"></a-entity>
         <!-- ***** SKY ***** -->
-        <a-sky src="#change_menu" rotation="0 -145 0"></a-sky>
-        <a-sphere radius="0.5" position="9 -6 -0.5" rotation="0 45 0" color="#4CC3D9" shadow
+        <a-sky src="#beaver_land" rotation="0 -145 0"></a-sky>
+        <a-entity id="camera" camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
+
+        <a-box position="5.4 -3 -1" rotation="0 15 0" color="#4CC3D9" width="0.3" shadow
+             scale="0.5 0.5 0.5"
              event-set__enter="_event: mouseenter; color: #026fc9"
              event-set__leave="_event: mouseleave; color: #4CC3D9"
-             navigate-on-click="url: 13_sealladh_explore_choose_non_human.html">
-        </a-sphere><!-- back -->
-        <a-sphere radius="0.5" position="12 -12 -8" rotation="0 45 0" color="#4CC3D9" shadow
-             event-set__enter="_event: mouseenter; color: #026fc9"
-             event-set__leave="_event: mouseleave; color: #4CC3D9"
-             navigate-on-click="url: 2_sealladh_main_menu.html">
-        </a-sphere><!-- main -->
-        <a-sphere radius="0.5" position="6 -5.5 -8" rotation="0 45 0" color="#4CC3D9" shadow
-             event-set__enter="_event: mouseenter; color: #026fc9"
-             event-set__leave="_event: mouseleave; color: #4CC3D9"
-             navigate-on-click="url: 1_sealladh_portal.html">
-        </a-sphere><!-- quit -->
+             navigate-on-click="url: 3_sealladh_explore_main_menu.html">
+        </a-box>
         <!--<a-sky src="#sky" rotation="0 -90 0"></a-sky>--> <!--for the other 2 posible "sky" options-->
         <!-- ***** NOTIFICATIONS CONTENT ***** -->
 		
